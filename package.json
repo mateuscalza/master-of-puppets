@@ -4,7 +4,7 @@
   "description": "Control everything in Node, remotely.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --ui mocha-cucumber test/*"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,10 @@
   "bugs": {
     "url": "https://github.com/mateuscalza/master-of-puppets/issues"
   },
-  "homepage": "https://github.com/mateuscalza/master-of-puppets#readme"
+  "homepage": "https://github.com/mateuscalza/master-of-puppets#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "mocha-cucumber": "0.0.5"
+  }
 }

@@ -8,12 +8,18 @@ Control everything in Node, remotely. Using socket and Object.observe().
 ## Usage
 
 ```JavaScript
-  var masterOfPuppets = require('master-of-puppets');gddfgdfg
+  // Require MOP
+  var mop = require('master-of-puppets');
 
-  masterOfPuppets.group('initial', 'Initial commands', function(group) {
-    group.task('hello', 'Say hello', function(){
-        console.log('Hello from MOP!');
-    });
+  // Example using robotjs
+  var robot = require('robotjs');
+
+  // Create a group
+  mop.group('keyboard', 'Keyboard');
+
+  // Define a puppet
+  mop.group('keyboard').puppet('space', 'Space', mop.job.Action, function(){
+    robot.keyTap('space');
   });
 ```
 
