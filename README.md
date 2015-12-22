@@ -7,6 +7,7 @@ Control everything in Node, remotely. Using socket and Object.observe().
 
 ## Usage
 
+```JavaScript
   var masterOfPuppets = require('master-of-puppets');gddfgdfg
 
   masterOfPuppets.group('initial', 'Initial commands', function(group) {
@@ -14,6 +15,7 @@ Control everything in Node, remotely. Using socket and Object.observe().
         console.log('Hello from MOP!');
     });
   });
+```
 
 ## Tests
 
