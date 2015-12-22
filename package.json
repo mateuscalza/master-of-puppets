@@ -37,5 +37,9 @@
     "chai": "^3.4.1",
     "mocha": "^2.3.4",
     "mocha-cucumber": "0.0.5"
+  },
+  "dependencies": {
+    "dot-prop": "^2.2.0",
+    "extend": "^3.0.0"
   }
 }
