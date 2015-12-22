@@ -1,0 +1,36 @@
+{
+  "name": "master-of-puppets",
+  "version": "0.1.0",
+  "description": "Control everything in Node, remotely.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuscalza/master-of-puppets.git"
+  },
+  "keywords": [
+    "node",
+    "remote",
+    "control",
+    "master",
+    "of",
+    "puppets",
+    "calza",
+    "socket",
+    "object",
+    "observe"
+  ],
+  "author": "Mateus Calza <mateuscalza@icloud.com> (https://github.com/mateuscalza)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/brentertz/scapegoat/blob/master/LICENSE-MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mateuscalza/master-of-puppets/issues"
+  },
+  "homepage": "https://github.com/mateuscalza/master-of-puppets#readme"
+}
