@@ -1,10 +1,10 @@
-var Puppet = require('./Puppet.js');
-var Node = require('./Node.js');
+var Puppet = require('./Puppet');
+var Node = require('./Node');
 
 /**
  * Constructs a Group.
  * Structure to wrap groups and puppets.
- * 
+ *
  * @constructor
  *
  * @param {string} key
@@ -36,11 +36,12 @@ Group.prototype.group = function (key, title) {
     return this.sub[key] = new Group(key, title, this.path);
 };
 
-Group.prototype.puppet = function (key, name) {
+Group.prototype.puppet = function (key, name, Job) {
     if (!name) {
         return this.sub[key];
     }
-    return this.sub[key] = new Puppet(key, name, this.path);
+    var args = Array.prototype.slice.call(arguments, 0, 2).concat([this.path], Array.prototype.slice.call(arguments, 2));
+    return this.sub[key] = Puppet.apply({}, args);
 };
 
 module.exports = Group;

@@ -1,9 +1,9 @@
-var Change = require('./Change.js');
+var Change = require('./Change');
 
 /**
  * Constructs a Node.
  * Basic observe operation to be extended.
- * 
+ *
  * @constructor
  */
 function Node() {
