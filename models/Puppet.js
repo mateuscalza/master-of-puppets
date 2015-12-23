@@ -17,7 +17,9 @@ function Puppet(key, name, path, Job, a, b, c) {
     this.key = key;
     this.name = name;
     this.path = path ? path + '.sub.' + key : 'sub.' + key;
-    this.job = Job.apply({}, Array.prototype.slice.call(arguments, 4));
+    if(Job){
+        this.job = Job.apply({}, Array.prototype.slice.call(arguments, 4));
+    }
     Node.call(this);
 
     return this;

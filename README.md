@@ -3,7 +3,9 @@ Control everything in Node, remotely. Using socket and Object.observe().
 
 ## Installation
 
-  > npm install master-of-puppets --save
+```bash
+$ npm install master-of-puppets --save
+```
 
 ## Usage
 
@@ -31,7 +33,9 @@ Control everything in Node, remotely. Using socket and Object.observe().
 
 ## Tests
 
-  > npm test
+```bash
+$ npm test
+```
 
 ## Contributing
 
