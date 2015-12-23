@@ -10,25 +10,25 @@ $ npm install master-of-puppets --save
 ## Usage
 
 ```JavaScript
-    // Require MOP
-    var mop = require('./');
+// Require MOP
+var mop = require('./');
 
-    // Example using robotjs
-    var robot = require('robotjs');
+// Example using robotjs
+var robot = require('robotjs');
 
-    // Create a group
-    mop.group('keyboard', 'Keyboard');
+// Create a group
+mop.group('keyboard', 'Keyboard');
 
-    // Use group and define a puppet
-    mop.group('keyboard').puppet('space', 'Space', mop.jobs.Action, function(){
-      robot.keyTap('space');
-    });
+// Use group and define a puppet
+mop.group('keyboard').puppet('space', 'Space', mop.jobs.Action, function(){
+  robot.keyTap('space');
+});
 
-    // Start socket communication
-    mop.startSocket();
+// Start socket communication
+mop.startSocket();
 
-    // Start web server that provides control (socket dependent)
-    mop.startWebServer();
+// Start web server that provides control (socket dependent)
+mop.startWebServer();
 ```
 
 ## Tests
