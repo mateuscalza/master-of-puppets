@@ -26,13 +26,13 @@ h4 {
 }
 
 ul {
-    list-style: none;
     padding: 0px;
     margin: 0px;
 }
 li {
     padding: 0px;
     margin: 0px;
+    display: inline-block;
 }
 
 button {
@@ -47,6 +47,7 @@ button {
     animate: 0.3s all ease;
     font-size: 14px;
     color: #222;
+    margin: 0px 3px 3px 0px;
 }
 button:hover, button:focus {
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);

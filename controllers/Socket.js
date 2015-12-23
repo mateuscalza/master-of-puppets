@@ -1,5 +1,5 @@
 var socketio = require('socket.io'),
-dotProp = require('dot-prop');
+    dotProp = require('dot-prop');
 
 /**
 * Constructs a Socket.
@@ -20,16 +20,12 @@ Socket.prototype.start = function () {
     self.io = socketio(settings.socket.port);
 
     self.io.on('connection', function (socket) {
-        socket.emit('structure', self.scope);
+        socket.emit('structure', {key: self.scope.key, title: self.scope.title, sub: self.scope.sub});
         socket.on('call', function(data){
             dotProp.get(self.scope, data.path).job.call(data);
-            
-            //var actuating = arrangeAndGet(moduleData.map, data.path);
-            //actuating.work.react.call(actuating.work, data, actuating);
         });
     });
 
-    console.info('Socket is ready! On port: ' + settings.socket.port);
     return self;
 };
 

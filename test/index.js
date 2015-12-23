@@ -1,5 +1,6 @@
 var expect = require('chai').expect,
-mop = require('../index');
+    mop = require('../index')
+    Browser = require('zombie');
 
 Feature('Structure', function() {
 
@@ -31,6 +32,26 @@ Feature('Structure', function() {
 
     Then('it becomes a puppet with "Light" name', function() {
       expect(mop.puppet('light').name).to.equal('Light');
+    });
+
+  });
+
+});
+
+Feature('WebServer', function() {
+
+  Scenario('Creating groups', function() {
+
+    Given('a request to start web server', function() {
+      mop.startWebServer();
+    });
+
+    When('the user goes to site', function() {
+      this.browser = new Browser({site: 'http://localhost:' + mop.settings().web.port});
+    });
+
+    Then('it gonna be accessible', function(done) {
+      this.browser.visit('/', done);
     });
 
   });

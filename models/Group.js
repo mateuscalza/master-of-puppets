@@ -14,7 +14,7 @@ var Node = require('./Node');
  * @param {string} path
  *   Path from parent to be extended.
  */
-function Group(key, title, path) {
+function Group(key, title, path, root) {
     this.key = key;
     this.title = title;
     if (path === null) {
@@ -23,7 +23,9 @@ function Group(key, title, path) {
         this.path = path ? path + '.sub.' + key : 'sub.' + key;
     }
     this.sub = {};
-
+    this.root = function(){
+        return root ? root : this;
+    }
     Node.call(this);
 }
 Group.prototype = new Node();
@@ -33,14 +35,14 @@ Group.prototype.group = function (key, title) {
     if (!title) {
         return this.sub[key];
     }
-    return this.sub[key] = new Group(key, title, this.path);
+    return this.sub[key] = new Group(key, title, this.path, this.root());
 };
 
 Group.prototype.puppet = function (key, name, Job) {
     if (!name) {
         return this.sub[key];
     }
-    var args = Array.prototype.slice.call(arguments, 0, 2).concat([this.path], Array.prototype.slice.call(arguments, 2));
+    var args = Array.prototype.slice.call(arguments, 0, 2).concat([this.path, this.root()], Array.prototype.slice.call(arguments, 2));
     return this.sub[key] = Puppet.apply({}, args);
 };
 

@@ -13,12 +13,15 @@ var Node = require('./Node');
  * @param {string} path
  *   Path from parent to be extended.
  */
-function Puppet(key, name, path, Job, a, b, c) {
+function Puppet(key, name, path, root, Job) {
     this.key = key;
     this.name = name;
     this.path = path ? path + '.sub.' + key : 'sub.' + key;
     if(Job){
-        this.job = Job.apply({}, Array.prototype.slice.call(arguments, 4));
+        this.job = Job.apply({}, Array.prototype.slice.call(arguments, 5));
+    }
+    this.root = function(){
+        return root;
     }
     Node.call(this);
 

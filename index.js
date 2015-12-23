@@ -1,8 +1,8 @@
 var Group = require('./models/Group'),
-Socket = require('./controllers/Socket'),
-WebServer = require('./controllers/WebServer'),
-dotProp = require('dot-prop'),
-extend = require('extend');
+    Socket = require('./controllers/Socket'),
+    WebServer = require('./controllers/WebServer'),
+    dotProp = require('dot-prop'),
+    extend = require('extend');
 
 var settings = {
     socket: {
@@ -25,15 +25,16 @@ module.exports.settings = function(userSettings) {
 module.exports.startSocket = function() {
     Socket.port = settings.socket.port;
     Socket.scope = this;
-    return Socket.start();
+    return this.currentSocket = Socket.start();
 };
 
 module.exports.startWebServer = function() {
     WebServer.port = settings.web.port;
     WebServer.scope = this;
-    return WebServer.start();
+    return this.currentWebServer = WebServer.start();
 };
 
 module.exports.jobs = {
-    Action: require('./jobs/Action')
+    Action: require('./jobs/Action'),
+    Info: require('./jobs/Info')
 };

@@ -55,9 +55,6 @@ WebServer.prototype.start = function() {
     // Start server
     this.server.listen(settings.web.port);
 
-    // Show success on console
-    console.info('WebServer is ready! On port: ' + settings.web.port);
-
     return this;
 };
 

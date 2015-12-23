@@ -1,5 +1,5 @@
 /**
- * Constructs a Job.
+ * Job to be extended.
  * Base for all jobs.
  *
  * @constructor
