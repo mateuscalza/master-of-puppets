@@ -1,5 +1,5 @@
 var Job = require('./Job'),
-	Change = require('./Change');
+	Change = require('../models/Change');
 
 /**
  * Constructs a Info.

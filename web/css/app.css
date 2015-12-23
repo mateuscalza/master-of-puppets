@@ -61,7 +61,7 @@ input {
     border: none;
     padding: 8px 14px;
     border-radius: 5px;
-    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.2);
     -moz-animate: 0.3s all ease;
     -webkit-animate: 0.3s all ease;
     animate: 0.3s all ease;
@@ -80,6 +80,7 @@ input {
     float: left;
     border: none;
     background: #fff;
+    box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 #console-go {
     width: 15%;
